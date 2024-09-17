@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const ppMori = localFont({
+  src: [
+    {
+      path: "./fonts/PPMori-Regular.otf",
+      weight: "400",
+    },
+    {
+      path: "./fonts/PPMori-SemiBold.otf",
+      weight: "500",
+    },
+  ],
+  variable: "--font-ppmori",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +30,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ppMori.variable} min-h-screen bg-background antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
