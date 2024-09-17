@@ -11,14 +11,6 @@
 - [ ] Implement authentication and handle permissions
 - [ ] Handle request pricing using charge API
 
-## Feature Details
-
-### Graph Data for Ads
-- [ ] Design data structure for storing ad metrics
-- [ ] Implement data collection mechanism
-- [ ] Choose appropriate graph library
-- [ ] Create graph components for visualizing ad data
-
 
 ## Notes
 - Consider breaking down larger tasks into smaller, manageable subtasks
